@@ -20,7 +20,7 @@ phases:
       - echo "Planning Terraform changes..."
       - terraform plan -out=tfplan
       - echo "Applying Terraform changes..."
-      - terraform apply -auto-approve tfplan
+      - terraform apply -auto-approve
 
   post_build:
     commands:
