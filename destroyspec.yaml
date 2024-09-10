@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip"
+      - "unzip terraform.zip"
+      - "mv terraform /usr/local/bin/"
+      - "terraform --version"
+
+  pre_build:
+    commands:
+      - echo "Initializing Terraform..."
+      - terraform init
+
+  build:
+    commands:
+      - echo "Planning Terraform changes..."
+      - terraform plan -out=tfplan
+      - echo "Applying Terraform changes..."
+      - terraform destroy -auto-approve
+
+  post_build:
+    commands:
+      - echo "Terraform destroy completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
