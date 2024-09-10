@@ -87,7 +87,7 @@ resource "aws_security_group" "my_sg" {
 # Key Pair
 resource "aws_key_pair" "my_key_pair" {
   key_name   = "my_key_pair"
-  public_key = file("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhCLqXxlrJuGis0EeuX/Y3M6z4Z4NUorQD5p3eWjOvakMf+RjPc5GdBuC1YAznHwWfBpn1eR4vGVZkcEYpn5rlvI64L8pgWh3dIbB5nAKfd0v7PrfYSixveD0Sw2DKQdWqlQbBadR0j5Vs7b3y+BVXkSZnCSVVgsfVZqsRbAXb/5AlJtpK227VS78VMOivi1fehQ8BouxjzMRtQbGpp0QA8VRG+LSaZeZ6eeqndZYIGX7UW5UcpLk2W6Z9/Y5HWqCSaj36jbvRxqI7dHMDwXFYf/HhxSaeuJ8v4S+h/wZAQ0poP/OOo92K9xPHlROjgVHdrBCtlkM6rE93UOApgBIJP2LpWjMF2kXDTIm9/9HxGcL63tU0LPTus2cX9ZGS0SKZjmiaoQLXMdJQv5zFh+H4eeadOEyXGt9TG/GO0Xf/XxGWBt7DDjutZKzXSUUoO9wphmgbo/m7002hcY5QzzlNAyyQdcFJKs7IkMp1LyhqTvMxacXeqflqA7v1Ck9G/fNIYHFZnMtRysM6VHWeJoRSoadzSs3kJige4etv3waLcdAie6oBRDp4aGDeMAFromhCkGoR/xemI+HCzCh8yOFIREDbiX5TEwOz3otjWuEljSxbosyILkKQ0q0xSEd0rPvLL6SwEW19pj24LW7nLvpgDalFcwP8ShC5KKODeXp3BQ==")  # Adjust to your SSH public key path
+  public_key = file("~/.ssh/id_rsa.pub")
 }
  
 # EC2 Instance
