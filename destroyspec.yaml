@@ -10,15 +10,9 @@ phases:
       - "mv terraform /usr/local/bin/"
       - "terraform --version"
 
-  pre_build:
-    commands:
-      - echo "Initializing Terraform..."
-      - terraform init
 
   build:
     commands:
-      - echo "Planning Terraform changes..."
-      - terraform plan -out=tfplan
       - echo "Applying Terraform changes..."
       - terraform destroy -auto-approve
 
